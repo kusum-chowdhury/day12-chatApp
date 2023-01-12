@@ -28,7 +28,10 @@ io.on("connection", function(socket) {
        socket.join("globalChat");
 
        //can name anything..sends to frontend
-       socket.emit("updateChat", "INFO", "You have joined global chat room");
+       socket.emit("updateChat", "INFO", "You have joined globalchat room");
+    });
+    socket.on("sendMessage", function(data){
+        io.sockets.to(socket.currentRoom).emit("updateChat", socket.username, data);
     })
 })
 
