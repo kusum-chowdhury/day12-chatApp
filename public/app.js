@@ -30,6 +30,7 @@ message.addEventListener("keyup", function (event) {
     }
   });
 
+  
 // Create new room on button click
 createRoomBtn.addEventListener("click", function () {
     // socket.emit("createRoom", prompt("Enter new room: "));
